@@ -1,8 +1,12 @@
 package dsa
 
-import ("errors")
+import (
+	"errors"
 
-func BinarySearch(sorted_numbers []int, number int) (int, error) {
+	"golang.org/x/exp/constraints"
+)
+
+func BinarySearch[T constraints.Ordered](sorted_numbers []T, number T) (int, error) {
 	left := 0
 	right := len(sorted_numbers) - 1
 	index := -1

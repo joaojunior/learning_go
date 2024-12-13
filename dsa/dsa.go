@@ -1,6 +1,10 @@
 package dsa
 
-func MergeSort(data []int) []int {
+import (
+	"golang.org/x/exp/constraints"
+)
+
+func MergeSort[T constraints.Ordered](data []T) []T {
 	if len(data) > 1 {
 		mid := len(data) / 2
 		left := MergeSort(data[0:mid])
@@ -11,8 +15,8 @@ func MergeSort(data []int) []int {
 	return data
 }
 
-func merge(left []int, right []int) []int {
-	var result []int
+func merge[T constraints.Ordered](left []T, right []T) []T {
+	var result []T
 	left_index := 0
 	right_index := 0
 
