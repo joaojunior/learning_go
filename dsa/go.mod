@@ -1,4 +1,4 @@
-module example.com/dsa
+module github.com/joaojunior/learning_go
 
 go 1.22.3
 
